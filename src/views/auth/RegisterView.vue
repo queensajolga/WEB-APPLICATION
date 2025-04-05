@@ -47,9 +47,6 @@ function onClick() {
 
                     <v-btn color="yellow-lighten-1" class="mt-2" type="submit" block>LOG IN</v-btn>
                   </v-form>
-                  <v-divider class="my-5"></v-divider>
-
-                  <h5><RouterLink to="/register">Don't have account? Register</RouterLink></h5>
                 </v-card-text>
               </v-card>
             </v-col>
