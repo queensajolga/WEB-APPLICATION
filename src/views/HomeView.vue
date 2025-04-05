@@ -73,5 +73,6 @@
 
   <br /><br /><br />
 
-  <h1>Hello!</h1>
+  <h1>Welcome to</h1>
+  <h2>EASY BORROW</h2>
 </template>
