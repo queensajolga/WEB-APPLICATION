@@ -11,7 +11,7 @@ function onClick() {
 <template>
   <v-responsive class="border rounded">
     <v-app :theme="theme">
-      <v-app-bar color="yellow-lighten-1" class="px-3">
+      <v-app-bar class="px-3">
         <v-spacer></v-spacer>
 
         <v-btn
@@ -68,7 +68,7 @@ function onClick() {
         </v-container>
       </v-main>
 
-      <v-footer color="yellow-lighten-1" border app>2025 Easy Borrow</v-footer>
+      <v-footer border app>2025 Easy Borrow</v-footer>
     </v-app>
   </v-responsive>
 </template>

@@ -82,8 +82,6 @@ function onClick() {
           </v-row>
         </v-container>
       </v-main>
-
-      <v-footer border app>2025 Easy Borrow</v-footer>
     </v-app>
   </v-responsive>
 </template>
