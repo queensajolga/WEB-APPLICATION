@@ -11,7 +11,7 @@ function onClick() {
 <template>
   <v-responsive class="border rounded">
     <v-app :theme="theme">
-      <v-app-bar color="yellow-lighten-1" class="px-3">
+      <v-app-bar class="px-3">
         <v-spacer></v-spacer>
 
         <v-btn
@@ -20,43 +20,70 @@ function onClick() {
           @click="onClick"
         ></v-btn>
       </v-app-bar>
+      <v-divider></v-divider>
+
+      <v-container>
+        <v-row class="d-flex justify-center">
+          <v-col cols="12" md="6" class="d-flex justify-center align-center">
+            <v-img :width="400" aspect-ratio="4/3" cover src="./images/EBlogo.png"></v-img>
+          </v-col>
+        </v-row>
+      </v-container>
+      <h5 class="text-center" style="font-size: 40px">Welcome to</h5>
+      <p class="text-center" style="font-size: 60px">EASY BORROW</p>
+      <p class="text-center" style="font-size: 20px">Share smarter, earn faster.</p>
 
       <v-main>
         <v-container>
           <v-row class="d-flex justify-center">
             <v-col cols="12" md="6">
-              <v-card
-                class="mx-auto"
-                prepend-icon="mdi-align-vertical-bottom"
-                subtitle="EASY BORROW"
-              >
-                <template v-slot:title>
-                  <span class="font-weight-black">Welcome to</span>
-                </template>
+              <v-card-text class="bg-surface-yellow-lighten-1">
+                <v-form fast-fail @submit.prevent>
+                  <v-text-field
+                    label="Email"
+                    variant="outlined"
+                    color="yellow-lighten-1"
+                    bg-color="yellow-lighten-1"
+                  ></v-text-field>
 
-                <v-card-text class="bg-surface-light pt-4">
-                  <v-form fast-fail @submit.prevent>
-                    <v-text-field label="Email" variant="outlined"></v-text-field>
+                  <v-text-field
+                    label="Password"
+                    type="password"
+                    variant="outlined"
+                    color="yellow-lighten-1"
+                    bg-color="yellow-lighten-1"
+                  ></v-text-field>
+                  <p class="text-center font-weight-medium" style="font-size: 15px">
+                    Forgot password?
+                  </p>
 
-                    <v-text-field
-                      label="Password"
-                      type="password"
-                      variant="outlined"
-                    ></v-text-field>
+                  <v-btn color="yellow-darken-1" class="mt-6 rounded-pill" type="submit" block
+                    >LOG IN AS</v-btn
+                  >
 
-                    <v-btn color="yellow-lighten-1" class="mt-2" type="submit" block>LOG IN</v-btn>
-                  </v-form>
-                  <v-divider class="my-5"></v-divider>
+                  <v-btn
+                    color="yellow-lighten-2"
+                    class="mt-4 rounded-pill"
+                    prepend-icon="mdi-google"
+                    width="400"
+                    type="submit"
+                    block
+                    >Sign in with Google</v-btn
+                  >
+                </v-form>
+                <v-divider class="my-5"></v-divider>
 
-                  <h5><RouterLink to="/register">Don't have account? Register</RouterLink></h5>
-                </v-card-text>
-              </v-card>
+                <h5 class="text-center">
+                  Don't have an account?
+                  <RouterLink to="/register"> REGISTER </RouterLink>
+                </h5>
+              </v-card-text>
             </v-col>
           </v-row>
         </v-container>
       </v-main>
 
-      <v-footer color="yellow-lighten-1" border app>2025 Easy Borrow</v-footer>
+      <v-footer border app>2025 Easy Borrow</v-footer>
     </v-app>
   </v-responsive>
 </template>

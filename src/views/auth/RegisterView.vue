@@ -21,46 +21,48 @@ function onClick() {
         ></v-btn>
       </v-app-bar>
 
+      <v-divider></v-divider>
+
+      <v-container>
+        <v-row class="d-flex justify-center">
+          <v-col cols="12" md="6" class="d-flex justify-center align-center">
+            <v-img :width="600" aspect-ratio="4/3" cover src="./images/EBlogo.png"></v-img>
+          </v-col>
+        </v-row>
+      </v-container>
+
       <v-main>
         <v-container>
           <v-row class="d-flex justify-center">
             <v-col cols="12" md="6">
-              <v-card
-                class="mx-auto"
-                prepend-icon="mdi-align-vertical-bottom"
-                subtitle="EASY BORROW"
-              >
-                <template v-slot:title>
-                  <span class="font-weight-black">Welcome to</span>
-                </template>
+              <template v-slot:title>
+                <span class="font-weight-black">Welcome to</span>
+              </template>
 
-                <v-card-text class="bg-surface-light pt-4">
-                  <v-form fast-fail @submit.prevent>
-                    <v-text-field label="Firstname" variant="outlined"></v-text-field>
+              <v-card-text class="bg-surface-yellow-lighten-1">
+                <v-form fast-fail @submit.prevent>
+                  <v-text-field label="Firstname" variant="outlined"></v-text-field>
 
-                    <v-text-field label="Lastname" variant="outlined"></v-text-field>
+                  <v-text-field label="Lastname" variant="outlined"></v-text-field>
 
-                    <v-text-field label="Email" variant="outlined"></v-text-field>
+                  <v-text-field label="Email" variant="outlined"></v-text-field>
 
-                    <v-text-field
-                      label="Password"
-                      type="password"
-                      variant="outlined"
-                    ></v-text-field>
+                  <v-text-field label="Password" type="password" variant="outlined"></v-text-field>
 
-                    <v-text-field
-                      label="Password confirmation"
-                      type="password"
-                      variant="outlined"
-                    ></v-text-field>
+                  <v-text-field
+                    label="Password confirmation"
+                    type="password"
+                    variant="outlined"
+                  ></v-text-field>
 
-                    <v-btn color="yellow-lighten-1" class="mt-2" type="submit" block>LOG IN</v-btn>
-                  </v-form>
-                  <v-divider class="my-5"></v-divider>
+                  <v-btn color="yellow-lighten-1" class="mt-2" type="submit" block>LOG IN</v-btn>
+                </v-form>
+                <v-divider class="my-5"></v-divider>
 
-                  <h5><RouterLink to="/register">Already have an account.</RouterLink></h5>
-                </v-card-text>
-              </v-card>
+                <h5 class="text-center">
+                  Already have an account?<RouterLink to="/"> Click here to log in</RouterLink>
+                </h5>
+              </v-card-text>
             </v-col>
           </v-row>
         </v-container>
