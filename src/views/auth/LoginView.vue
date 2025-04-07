@@ -2,6 +2,8 @@
 import { ref } from 'vue'
 
 const theme = ref('light')
+const item1 = [{ title: 'RENTEE' }]
+const item2 = [{ title: 'RENTER' }]
 
 function onClick() {
   theme.value = theme.value === 'light' ? 'dark' : 'light'
@@ -57,13 +59,44 @@ function onClick() {
                     Forgot password?
                   </p>
 
-                  <v-btn color="yellow-darken-1" class="mt-6 rounded-pill" type="submit" block>
-                    <RouterLink to="/dashboard">LOG IN AS </RouterLink></v-btn
-                  >
+                  <div class="text-center">
+                    <v-menu open-on-hover>
+                      <template v-slot:activator="{ props }">
+                        <v-btn
+                          color="yellow-darken-1"
+                          class="font-weight-bold mt-6 rounded-pill"
+                          v-bind="props"
+                          >LOG IN AS
+                        </v-btn>
+                      </template>
+
+                      <v-list bg-color="yellow-darken-1" class="text-center mt-4 rounded-5">
+                        <v-list-item v-for="(item, index) in item1" :key="index" :value="index">
+                          <RouterLink to="/dashboard">
+                            <v-list-item-title class="font-weight-medium">
+                              {{ item.title }}
+
+                              <v-list-item
+                                v-for="(item, index) in item2"
+                                :key="index"
+                                :value="index"
+                              >
+                                <RouterLink to="/renterdashboard">
+                                  <v-list-item-title class="font-weight-medium">
+                                    {{ item.title }}
+                                  </v-list-item-title>
+                                </RouterLink>
+                              </v-list-item>
+                            </v-list-item-title>
+                          </RouterLink>
+                        </v-list-item>
+                      </v-list>
+                    </v-menu>
+                  </div>
 
                   <v-btn
                     color="yellow-lighten-2"
-                    class="mt-4 rounded-pill"
+                    class="font-weight-bold mt-4 rounded-pill"
                     prepend-icon="mdi-google"
                     width="400"
                     type="submit"

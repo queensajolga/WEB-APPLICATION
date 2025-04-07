@@ -40,21 +40,7 @@ function onClick() {
               <v-card-text class="bg-surface-yellow-lighten-1">
                 <v-form fast-fail @submit.prevent>
                   <v-text-field
-                    label="Email"
-                    variant="outlined"
-                    color="black"
-                    bg-color="yellow-lighten-1 rounded-5"
-                  ></v-text-field>
-
-                  <v-text-field
-                    label="Lastname"
-                    variant="outlined"
-                    color="black"
-                    bg-color="yellow-lighten-1 rounded-5"
-                  ></v-text-field>
-
-                  <v-text-field
-                    label="Email"
+                    label="Student ID"
                     variant="outlined"
                     color="black"
                     bg-color="yellow-lighten-1 rounded-5"
@@ -68,23 +54,11 @@ function onClick() {
                     bg-color="yellow-lighten-1 rounded-5"
                   ></v-text-field>
 
-                  <v-text-field
-                    label="Password confirmation"
-                    type="password"
-                    variant="outlined"
-                    color="black"
-                    bg-color="yellow-lighten-1 rounded-5"
-                  ></v-text-field>
-
                   <v-btn color="yellow-darken-1" class="tetxmt-2 rounded-pill" type="submit" block
-                    ><RouterLink to="/">REGISTER</RouterLink></v-btn
-                  >
+                    >LOG IN
+                  </v-btn>
                 </v-form>
                 <v-divider class="my-5"></v-divider>
-
-                <h5 class="text-center">
-                  Already have an account?<RouterLink to="/"> Click here to log in</RouterLink>
-                </h5>
               </v-card-text>
             </v-col>
           </v-row>
