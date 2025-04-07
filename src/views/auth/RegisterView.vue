@@ -30,7 +30,9 @@ function onClick() {
           </v-col>
         </v-row>
       </v-container>
-
+      <h5 class="text-center" style="font-size: 40px">Welcome to</h5>
+      <p class="text-center" style="font-size: 60px">EASY BORROW</p>
+      <p class="text-center" style="font-size: 20px">Share smarter, earn faster.</p>
       <v-main>
         <v-container>
           <v-row class="d-flex justify-center">
@@ -92,8 +94,6 @@ function onClick() {
           </v-row>
         </v-container>
       </v-main>
-
-      <v-footer border app>2025 Easy Borrow</v-footer>
     </v-app>
   </v-responsive>
 </template>

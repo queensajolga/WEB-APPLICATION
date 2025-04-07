@@ -57,8 +57,8 @@ function onClick() {
                     Forgot password?
                   </p>
 
-                  <v-btn color="yellow-darken-1" class="mt-6 rounded-pill" type="submit" block
-                    >LOG IN AS</v-btn
+                  <v-btn color="yellow-darken-1" class="mt-6 rounded-pill" type="submit" block>
+                    <RouterLink to="/dashboard">LOG IN AS </RouterLink></v-btn
                   >
 
                   <v-btn
