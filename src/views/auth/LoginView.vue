@@ -42,16 +42,16 @@ function onClick() {
                   <v-text-field
                     label="Email"
                     variant="outlined"
-                    color="yellow-lighten-1"
-                    bg-color="yellow-lighten-1"
+                    color="black"
+                    bg-color="yellow-lighten-1 rounded-5"
                   ></v-text-field>
 
                   <v-text-field
                     label="Password"
                     type="password"
                     variant="outlined"
-                    color="yellow-lighten-1"
-                    bg-color="yellow-lighten-1"
+                    color="black"
+                    bg-color="yellow-lighten-1 rounded-5"
                   ></v-text-field>
                   <p class="text-center font-weight-medium" style="font-size: 15px">
                     Forgot password?

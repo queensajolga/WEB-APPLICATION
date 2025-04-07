@@ -41,21 +41,46 @@ function onClick() {
 
               <v-card-text class="bg-surface-yellow-lighten-1">
                 <v-form fast-fail @submit.prevent>
-                  <v-text-field label="Firstname" variant="outlined"></v-text-field>
+                  <v-text-field
+                    label="Firstname"
+                    variant="outlined"
+                    color="black"
+                    bg-color="yellow-lighten-1 rounded-5"
+                  ></v-text-field>
 
-                  <v-text-field label="Lastname" variant="outlined"></v-text-field>
+                  <v-text-field
+                    label="Lastname"
+                    variant="outlined"
+                    color="black"
+                    bg-color="yellow-lighten-1 rounded-5"
+                  ></v-text-field>
 
-                  <v-text-field label="Email" variant="outlined"></v-text-field>
+                  <v-text-field
+                    label="Email"
+                    variant="outlined"
+                    color="black"
+                    bg-color="yellow-lighten-1 rounded-5"
+                  ></v-text-field>
 
-                  <v-text-field label="Password" type="password" variant="outlined"></v-text-field>
+                  <v-text-field
+                    label="Password"
+                    type="password"
+                    variant="outlined"
+                    color="black"
+                    bg-color="yellow-lighten-1 rounded-5"
+                  ></v-text-field>
 
                   <v-text-field
                     label="Password confirmation"
                     type="password"
                     variant="outlined"
+                    color="black"
+                    bg-color="yellow-lighten-1 rounded-5"
                   ></v-text-field>
 
-                  <v-btn color="yellow-lighten-1" class="mt-2" type="submit" block>LOG IN</v-btn>
+                  <v-btn color="yellow-darken-1" class="mt-2 rounded-pill" type="submit" block
+                    >LOG IN</v-btn
+                  >
                 </v-form>
                 <v-divider class="my-5"></v-divider>
 
