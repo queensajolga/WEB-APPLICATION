@@ -162,30 +162,37 @@ const selectProfileImage = (event) => {
             ></div>
           </v-row>
           <v-row justify="start" class="mb-6">
-            <h2 class="section-title" style="padding-left: 50px">Profile Information</h2>
+            <h6 class="section-title" style="padding-left: 30px">
+              <RouterLink to="/" class="signout-button"> SIGNOUT</RouterLink>
+            </h6>
+          </v-row>
+
+          <v-row justify="start" class="mb-6">
+            <h2 class="section-title" style="padding-left: 30px">Profile Information</h2>
           </v-row>
           <v-row justify="start" class="mb-6">
-            <h3 class="section-title" style="padding-left: 50px">Password and Security</h3>
+            <h3 class="section-title" style="padding-left: 30px">Password and Security</h3>
           </v-row>
           <v-row justify="start" class="mb-6">
-            <h4 class="section-title" style="padding-left: 50px">Activity Log</h4>
+            <h4 class="section-title" style="padding-left: 30px">Activity Log</h4>
           </v-row>
           <v-row justify="start" class="mb-6">
-            <h5 class="section-title" style="padding-left: 50px">Business Integration</h5>
+            <h5 class="section-title" style="padding-left: 30px">Business Integration</h5>
           </v-row>
           <v-row justify="start" class="mb-6">
-            <h6 class="section-title" style="padding-left: 50px">Community Standard</h6>
+            <h6 class="section-title" style="padding-left: 30px">Community Standard</h6>
           </v-row>
           <v-row justify="start" class="mb-6">
             <v-icon
               icon="mdi-delete-forever"
               size="x-large"
               class="mr-4"
-              style="padding-left: 16px; color: red; margin-top: 8px"
+              style="padding-left: 16px; color: red; margin-top: 4px"
             ></v-icon>
             <h6 class="section-title" style="color: red">Delete account</h6>
           </v-row>
         </div>
+
         <v-row justify="center" class="mb-8">
           <div class="custom-divider mx-auto" style="border-top: 3px solid black; width: 95%"></div>
         </v-row>
@@ -259,7 +266,7 @@ const selectProfileImage = (event) => {
   border-radius: 2px;
 }
 .section-title {
-  font-size: 32px;
+  font-size: 25px;
   font-weight: bold;
   color: #000;
   font-family: 'Lexend Exa', sans-serif;
@@ -288,5 +295,8 @@ const selectProfileImage = (event) => {
   font-size: 16px;
   color: #333;
   margin-top: 8px;
+}
+.signout-button {
+  text-decoration: none;
 }
 </style>
