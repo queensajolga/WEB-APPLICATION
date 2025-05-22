@@ -184,7 +184,7 @@ function navigateTo(path) {
 </script>
 
 <template>
-  <v-app>
+  <v-app :theme="theme">
     <v-main>
       <v-container fluid class="py-6">
         <v-row justify="center" align="center" class="mb-6">
@@ -192,12 +192,18 @@ function navigateTo(path) {
             <v-img src="/images/EBlogo.png" width="160" height="160" contain />
             <v-sheet class="nav-container px-6 py-2 ml-4" color="white">
               <v-row align="center" no-gutters>
-                <v-btn text class="nav-btn" @click="router.push('/renterdashboard')">Home</v-btn>
+                <v-btn
+                  text
+                  class="nav-btn"
+                  :class="{ active: route.path === '/renterDashboard' }"
+                  @click="navigateTo('renterDashboard')"
+                  >Home</v-btn
+                >
                 <v-btn
                   text
                   class="nav-btn"
                   :class="{ active: route.path === '/rentals' }"
-                  @click="navigateTo('/rentals')"
+                  @click="navigateTo('rentals')"
                   >Rentals</v-btn
                 >
                 <v-btn
@@ -207,8 +213,13 @@ function navigateTo(path) {
                   @click="navigateTo('message')"
                   >Messages</v-btn
                 >
-
-                <v-btn text class="nav-btn" @click="router.push('/profile')">Profile</v-btn>
+                <v-btn
+                  text
+                  class="nav-btn"
+                  :class="{ active: route.path === '/profile' }"
+                  @click="navigateTo('/profile')"
+                  >Profile</v-btn
+                >
               </v-row>
             </v-sheet>
           </v-col>
@@ -437,6 +448,43 @@ function navigateTo(path) {
   color: black !important;
   margin-right: 20px;
   border-radius: 20px;
+}
+.nav-btn-home {
+  border: 1px solid black !important;
+  pointer-events: none;
+}
+.nav-container {
+  border: 3px solid #ffd700;
+  border-radius: 10px;
+  display: inline-block;
+  width: fit-content;
+}
+.navigation-container {
+  border: 3px solid #ffd700;
+  border-radius: 10px;
+  max-width: 730px;
+  width: 100%;
+}
+.nav-location-container {
+  border: 3px solid #ffd700;
+  border-radius: 10px;
+  max-width: 800px;
+  width: 100%;
+}
+.nav-btn {
+  font-weight: bold;
+  color: black !important;
+  margin-right: 20px;
+  border-radius: 20px;
+  background-color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}
+.nav-btn.active {
+  border: 1px solid black;
 }
 .nav-btn-home {
   border: 1px solid black !important;

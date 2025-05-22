@@ -121,8 +121,8 @@ function sendMessage() {
                 <v-btn
                   text
                   class="nav-btn"
-                  :class="{ active: route.path === '/renteeProfile' }"
-                  @click="navigateTo('/renteeProfile')"
+                  :class="{ active: route.path === '/profile' }"
+                  @click="navigateTo('/profile')"
                   >Profile</v-btn
                 >
               </v-row>

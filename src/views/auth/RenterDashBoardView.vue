@@ -228,6 +228,43 @@ function navigateTo(path) {
   border: 1px solid black !important;
   pointer-events: none;
 }
+.nav-container {
+  border: 3px solid #ffd700;
+  border-radius: 10px;
+  display: inline-block;
+  width: fit-content;
+}
+.navigation-container {
+  border: 3px solid #ffd700;
+  border-radius: 10px;
+  max-width: 730px;
+  width: 100%;
+}
+.nav-location-container {
+  border: 3px solid #ffd700;
+  border-radius: 10px;
+  max-width: 800px;
+  width: 100%;
+}
+.nav-btn {
+  font-weight: bold;
+  color: black !important;
+  margin-right: 20px;
+  border-radius: 20px;
+  background-color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}
+.nav-btn.active {
+  border: 1px solid black;
+}
+.nav-btn-home {
+  border: 1px solid black !important;
+  pointer-events: none;
+}
 .yellow-section {
   background-color: #fff170;
   min-height: 100vh;
