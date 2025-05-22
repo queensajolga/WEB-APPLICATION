@@ -52,7 +52,7 @@ const menuItems = ref([
             <v-card class="mx-auto elevation-24">
               <v-row class="d-flex justify-center my-6">
                 <v-col cols="12" md="6" class="d-flex justify-center align-center">
-                  <v-img :width="400" aspect-ratio="16/0" cover src="./favicon.ico"></v-img>
+                  <v-img :width="400" aspect-ratio="16/0" cover src="/favicon.ico"></v-img>
                 </v-col>
               </v-row>
 
