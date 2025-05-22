@@ -119,7 +119,7 @@ function handleRegister() {
               <v-row>
                 <v-col cols="12" md="6" class="mx-auto">
                   <v-card class="mx-auto elevation-24 pa-6">
-                    <v-img src="./images/EBlogo.png" :width="300" class="mx-auto mb-4" />
+                    <v-img src="/public/favicon.ico" width="160" height="160" contain />
                     <h2 class="text-center mb-4">Register to EASY BORROW</h2>
 
                     <v-form @submit.prevent="handleRegister">

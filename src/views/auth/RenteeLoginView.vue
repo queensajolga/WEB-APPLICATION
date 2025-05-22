@@ -110,7 +110,7 @@ function navigateTo(path) {
         <!-- Navigation -->
         <v-row justify="center" align="center" class="mb-6">
           <v-col cols="auto" class="d-flex align-center">
-            <v-img src="/images/EBlogo.png" width="160" height="160" contain />
+            <v-img src="/public/favicon.ico" width="160" height="160" contain />
             <v-sheet class="nav-container px-6 py-2 ml-4" color="white">
               <v-row align="center" no-gutters>
                 <v-btn text class="nav-btn nav-btn-home">Home</v-btn>
