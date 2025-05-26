@@ -66,7 +66,7 @@ watchEffect(() => {
           </v-col>
         </v-row>
 
-        <div class="yellow-section py-8 px-4">
+        <div class="white-section py-8 px-4">
           <v-row justify="center" class="mb-8">
             <div class="custom-divider mx-auto"></div>
           </v-row>
@@ -74,18 +74,204 @@ watchEffect(() => {
             <h2 class="hello-text">Rental Payment</h2>
           </v-row>
 
-          <v-row justify="center" class="mb-8">
+          <v-row justify="center" class="mb-10">
             <div
               class="custom-divider mx-auto"
               style="border-top: 3px solid black; width: 95%"
             ></div>
           </v-row>
 
-          <v-card class="pa-6" elevation="4" color="yellow-lighten-3">
+          <div class="white-section py-1 px-5">
             <v-row justify="center">
-              <p class="welcome-text">SELECT YOUR MODE OF PAYMENT</p>
+              <v-col cols="auto">
+                <v-row justify="center ">
+                  <p class="welcome-text">SELECT YOUR MODE OF PAYMENT</p>
+                </v-row>
+              </v-col>
             </v-row>
-          </v-card>
+
+            <v-row justify="center">
+              <v-col cols="12" sm="6" md="4">
+                <v-btn
+                  color="indigo-lighten-2"
+                  class="font-weight-bold mt-10 rounded-lg pa-2"
+                  v-bind="activatorProps"
+                  text="GCash"
+                  variant="flat"
+                  block
+                  height="50px"
+                  style="font-size: 18px"
+                >
+                </v-btn>
+              </v-col>
+
+              <v-col cols="12" sm="6" md="4">
+                <v-btn
+                  color="indigo-lighten-2"
+                  class="font-weight-bold mt-10 rounded-lg pa-2"
+                  v-bind="activatorProps"
+                  text="Cash on Delivery / Pick up"
+                  variant="flat"
+                  block
+                  height="50px"
+                  style="font-size: 18px"
+                ></v-btn>
+              </v-col>
+            </v-row>
+
+            <v-spacer class="mt-10"></v-spacer>
+
+            <v-row justify="center" class="mb-8">
+              <div
+                class="custom-divider mx-auto"
+                style="border-top: 3px solid black; width: 95%"
+              ></div>
+            </v-row>
+
+            <v-row justify="start mx-10">
+              <v-col cols="auto">
+                <v-row justify="center mx-5">
+                  <p class="welcome-text" style="font-size: 30px">Delivery Information</p>
+                </v-row>
+              </v-col>
+            </v-row>
+
+            <v-spacer class="mt-10"></v-spacer>
+
+            <v-row justify="center">
+              <v-col cols="12" sm="6" md="7">
+                <v-text-field
+                  color="black"
+                  text-color="black"
+                  v-model="Name"
+                  label="Name"
+                  variant="outlined"
+                  bg-color="indigo-lighten-3 rounded-lg"
+                />
+              </v-col>
+              <v-col cols="12" sm="6" md="4">
+                <v-text-field
+                  color="black"
+                  v-model="number"
+                  label="Phone number"
+                  variant="outlined"
+                  bg-color="indigo-lighten-3 rounded-lg"
+                />
+              </v-col>
+            </v-row>
+
+            <v-row justify="center">
+              <v-col cols="12" sm="6" md="7">
+                <v-text-field
+                  color="black"
+                  text-color="black"
+                  v-model="Name"
+                  label="Email"
+                  variant="outlined"
+                  bg-color="indigo-lighten-3 rounded-lg"
+                />
+              </v-col>
+              <v-col cols="12" sm="6" md="4"> </v-col>
+            </v-row>
+
+            <v-spacer class="mt-10"></v-spacer>
+
+            <v-row justify="start mx-10">
+              <v-col cols="auto">
+                <v-row justify="center mx-5">
+                  <p class="welcome-text" style="font-size: 30px">Address</p>
+                </v-row>
+              </v-col>
+            </v-row>
+
+            <v-spacer class="mt-10"></v-spacer>
+
+            <v-row justify="center">
+              <v-col cols="12" sm="6" md="11">
+                <v-text-field
+                  color="black"
+                  text-color="black"
+                  v-model="Name"
+                  label="Street address"
+                  variant="outlined"
+                  bg-color="indigo-lighten-3 rounded-lg"
+                />
+              </v-col>
+            </v-row>
+            <v-row justify="center">
+              <v-col cols="12" sm="6" md="6">
+                <v-text-field
+                  color="black"
+                  text-color="black"
+                  v-model="city"
+                  label="City"
+                  variant="outlined"
+                  bg-color="indigo-lighten-3 rounded-lg"
+                />
+              </v-col>
+              <v-col cols="12" sm="6" md="5">
+                <v-text-field
+                  color="black"
+                  v-model="text"
+                  label="Province"
+                  variant="outlined"
+                  bg-color="indigo-lighten-3 rounded-lg"
+                />
+              </v-col>
+            </v-row>
+            <v-row justify="center">
+              <v-col cols="12" sm="6" md="6">
+                <v-text-field
+                  color="black"
+                  text-color="black"
+                  v-model="number"
+                  label="Postal code"
+                  variant="outlined"
+                  bg-color="indigo-lighten-3 rounded-lg"
+                />
+              </v-col>
+              <v-col cols="12" sm="6" md="5"> </v-col>
+            </v-row>
+
+            <v-spacer class="mt-10"></v-spacer>
+
+            <v-row justify="center" class="mb-8">
+              <v-col cols="12" sm="6" md="8"> </v-col>
+              <v-col cols="12" sm="6" md="3">
+                <v-btn
+                  color="indigo-darken-1"
+                  class="font-weight-bold mt-10 rounded-lg pa-2"
+                  v-bind="activatorProps"
+                  text="Confirm"
+                  variant="flat"
+                  block
+                  height="50px"
+                  style="font-size: 18px"
+                >
+                </v-btn>
+              </v-col>
+            </v-row>
+
+            <v-spacer class="mt-10"></v-spacer>
+
+            <div
+              class="custom-divider mx-auto"
+              style="border-top: 3px solid black; width: 95%"
+            ></div>
+
+            <v-spacer class="mt-10"></v-spacer>
+
+            <v-row justify="center">
+              <v-col cols="auto">
+                <v-row justify="center ">
+                  <p class="welcome-text">
+                    Fill out only the Delivery Information if you want to deliver the item in your
+                    location.
+                  </p>
+                </v-row>
+              </v-col>
+            </v-row>
+          </div>
         </div>
       </v-container>
     </v-main>

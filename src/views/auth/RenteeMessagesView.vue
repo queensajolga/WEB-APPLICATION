@@ -195,7 +195,6 @@ function openMessengerPopup(message) {
     case 'queen':
       simpleTextMessage = `Hi Ella! Visit our rental page to check out the latest items available for rent!`
       break
-
     case 'PEDAL & GO': // This case was already handled above by its 'jannah' ID, leaving this here for clarity.
       simpleTextMessage = `Good day ${userFirstName.value}! Your E-bike rental from May 10-12, 2025, is all set. We're looking forward to your ride and hope you have a fantastic experience. As a friendly reminder, please bring your valid ID for pickup at the CSU campus. If anything comes up or you have any questions before then, please message us directly.`
       break
@@ -369,7 +368,7 @@ function proceedToPayment(link) {
 
                 <div v-if="chatMsg.isPaymentAction" class="payment-button-container">
                   <v-btn
-                    color="yellow-lighten-2"
+                    color="indigo-lighten-1"
                     class="pay-button"
                     @click="proceedToPayment(chatMsg.paymentLink)"
                     >{{ chatMsg.text || 'Proceed to Payment' }}</v-btn
@@ -522,14 +521,15 @@ function proceedToPayment(link) {
 
 .pay-button {
   padding: 8px 12px;
-  border-radius: 18px;
+  border-radius: 17px;
   word-break: break-word;
 }
 
 .payment-button-container {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   width: 100%;
-  margin-top: 8px;
+  margin-top: 10px;
+  margin-left: 40px;
 }
 </style>
