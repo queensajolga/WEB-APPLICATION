@@ -25,22 +25,34 @@ watchEffect(() => {
 
 const messages = ref([
   {
-    name: 'Jannah',
+    name: 'PEDAL & GO',
     preview: '2 messages from Jannah',
     avatar: '👩',
     status: 'online',
     id: 'jannah',
   },
-  { name: 'Honey', preview: '5 messages from Honey', avatar: '🧑', status: 'online', id: 'honey' },
-  { name: 'Dan', preview: 'Thank you!', avatar: '🧔', status: 'online', id: 'dan' },
   {
-    name: 'Joseph',
+    name: 'YOUR SHOT RENTALS',
+    preview: '5 messages from Honey',
+    avatar: '🧑',
+    status: 'online',
+    id: 'honey',
+  },
+  { name: 'STYLE SWITCH', preview: 'Thank you!', avatar: '🧔', status: 'online', id: 'dan' },
+  {
+    name: 'THE FURNITURE LINK',
     preview: 'You replied to Joseph',
     avatar: '👨‍💼',
     status: 'online',
     id: 'joseph',
   },
-  { name: 'Marian', preview: "Thanks ma'am", avatar: '👩', status: 'online', id: 'marian' },
+  {
+    name: 'YOUR CAMP COMFORT',
+    preview: "Thanks ma'am",
+    avatar: '👩',
+    status: 'online',
+    id: 'marian',
+  },
   {
     name: 'Andrei',
     preview: 'You replied to Andrei',
@@ -73,10 +85,132 @@ function onClick() {
 function openMessengerPopup(message) {
   selectedUser.value = message
   dialog.value = true
-  // In a real application, you'd fetch messages for this user here
-  chatMessages.value = [
-    { text: `Chatting with ${message.name}...`, isSent: false }, // Dummy message
-  ]
+
+  // Clear previous messages
+  chatMessages.value = []
+
+  // Define a variable for a simple text message (for cases without special actions)
+  let simpleTextMessage = ''
+
+  switch (message.id) {
+    case 'jannah': // E-bike Rental
+      chatMessages.value = [
+        {
+          text: `Hi ${userFirstName.value}! Your E-bike rental from May 10-12, 2025, is all set! We're looking forward to your ride. Please present your valid ID at the CSU campus for pickup. Enjoy the journey!`,
+          isSent: false,
+        },
+        {
+          text: `To finalize your booking, please proceed with the payment. Click the button below to complete your transaction. `, // Or simply: "Please proceed with payment to confirm your booking."
+          isSent: false,
+        },
+        {
+          text: `Proceed to Payment`,
+          isSent: false,
+          isPaymentAction: true,
+          paymentLink: '/renteePayment',
+        },
+      ]
+      break
+    case 'honey': // Camera Rental
+      chatMessages.value = [
+        {
+          text: `Hey ${userFirstName.value}! Your camera rental for May 15-17, 2025, is all set. Get ready to capture some amazing shots! Please remember to bring your valid ID for pickup at our CDO branch.`,
+          isSent: false,
+        },
+        {
+          text: `To finalize your booking, please proceed with the payment. Click the button below to complete your transaction. `, // Or simply: "Please proceed with payment to confirm your booking."
+          isSent: false,
+        },
+        {
+          text: `Proceed to Payment`,
+          isSent: false,
+          isPaymentAction: true,
+          paymentLink: '/renteePayment',
+        },
+      ]
+      break
+    case 'dan': // Prom Dress Rental
+      chatMessages.value = [
+        {
+          text: `Dear ${userFirstName.value},\n\nThis message confirms your prom dress rental for May 20, 2025. The gown is available for pickup at our Cagayan de Oro location. Please present a valid identification document upon collection.`,
+          isSent: false,
+        },
+        {
+          text: `To finalize your booking, please proceed with the payment. Click the button below to complete your transaction. `, // Or simply: "Please proceed with payment to confirm your booking."
+          isSent: false,
+        },
+        {
+          text: `Proceed to Payment`,
+          isSent: false,
+          isPaymentAction: true,
+          paymentLink: '/renteePayment',
+        },
+      ]
+      break
+    case 'joseph': // Tables & Chairs Rental
+      chatMessages.value = [
+        {
+          text: `Good day ${userFirstName.value}! Your tables and chairs rental for May 22-24, 2025, is confirmed. We look forward to seeing you at our warehouse/pickup point for collection.`,
+          isSent: false,
+        },
+        {
+          text: `To finalize your booking, please proceed with the payment. Click the button below to complete your transaction. `, // Or simply: "Please proceed with payment to confirm your booking."
+          isSent: false,
+        },
+        {
+          text: `Proceed to Payment`,
+          isSent: false,
+          isPaymentAction: true,
+          paymentLink: '/renteePayment',
+        },
+      ]
+      break
+    case 'marian': // Camping Chair Rental
+      chatMessages.value = [
+        {
+          text: `Hey ${userFirstName.value}! Get ready for some comfy relaxation! Your camping chair rental for May 25-26, 2025, is confirmed. Please have your ID ready for pickup at our CSU campus.`,
+          isSent: false,
+        },
+        {
+          text: `To finalize your booking, please proceed with the payment. Click the button below to complete your transaction. `, // Or simply: "Please proceed with payment to confirm your booking."
+          isSent: false,
+        },
+        {
+          text: `Proceed to Payment`,
+          isSent: false,
+          isPaymentAction: true,
+          paymentLink: '/renteePayment',
+        },
+      ]
+      break
+    case 'andrei':
+      simpleTextMessage = `...`
+      break
+    case 'yuri':
+      simpleTextMessage = `...`
+      break
+    case 'beth':
+      simpleTextMessage = `Typing`
+      break
+    case 'queen':
+      simpleTextMessage = `Hi Ella! Visit our rental page to check out the latest items available for rent!`
+      break
+
+    case 'PEDAL & GO': // This case was already handled above by its 'jannah' ID, leaving this here for clarity.
+      simpleTextMessage = `Good day ${userFirstName.value}! Your E-bike rental from May 10-12, 2025, is all set. We're looking forward to your ride and hope you have a fantastic experience. As a friendly reminder, please bring your valid ID for pickup at the CSU campus. If anything comes up or you have any questions before then, please message us directly.`
+      break
+    default:
+      simpleTextMessage = `Hello, Good day ${message.name}! Your rental details will be confirmed shortly. Thank you for choosing us!`
+  }
+
+  if (simpleTextMessage) {
+    chatMessages.value = [
+      {
+        text: simpleTextMessage,
+        isSent: false,
+      },
+    ]
+  }
 }
 
 function sendMessage() {
@@ -85,6 +219,14 @@ function sendMessage() {
     newMessage.value = ''
     // In a real application, you'd send the message to the server for selectedUser.value.id
   }
+}
+
+// Function to handle payment button click
+function proceedToPayment(link) {
+  console.log(`Navigating to payment: ${link}`)
+  router.push(link) // Use Vue Router to navigate for internal pages
+  // For external payment gateways, use: window.open(link, '_blank');
+  dialog.value = false // Close the chat dialog after clicking
 }
 </script>
 
@@ -201,7 +343,7 @@ function sendMessage() {
             </v-toolbar>
             <v-card-text
               class="message-area pa-4"
-              style="height: 700px; overflow-y: auto; width: 900px"
+              style="height: 600px; overflow-y: auto; width: 600px"
             >
               <div
                 v-for="(chatMsg, index) in chatMessages"
@@ -209,14 +351,31 @@ function sendMessage() {
                 :class="{ sent: chatMsg.isSent, received: !chatMsg.isSent }"
                 class="mb-2"
               >
-                <v-chip v-if="!chatMsg.isSent" class="mr-2" color="#e0f7fa" label small>{{
-                  selectedUser.avatar
-                }}</v-chip>
+                <v-chip
+                  v-if="!chatMsg.isSent && !chatMsg.isPaymentAction"
+                  class="mr-2"
+                  color="#e0f7fa"
+                  label
+                  small
+                  >{{ selectedUser.avatar }}</v-chip
+                >
+
                 <span
-                  class="message-text rounded-pill pa-2"
+                  v-if="!chatMsg.isPaymentAction"
+                  class="message-text rounded-4 pa-2"
                   :style="{ 'background-color': chatMsg.isSent ? '#e6ee9c' : '#f0f4c3' }"
                   >{{ chatMsg.text }}</span
                 >
+
+                <div v-if="chatMsg.isPaymentAction" class="payment-button-container">
+                  <v-btn
+                    color="yellow-lighten-2"
+                    class="pay-button"
+                    @click="proceedToPayment(chatMsg.paymentLink)"
+                    >{{ chatMsg.text || 'Proceed to Payment' }}</v-btn
+                  >
+                </div>
+
                 <v-chip v-if="chatMsg.isSent" class="ml-2" color="#e6ee9c" label small>👤</v-chip>
               </div>
             </v-card-text>
@@ -359,5 +518,18 @@ function sendMessage() {
   padding: 8px 12px;
   border-radius: 18px;
   word-break: break-word;
+}
+
+.pay-button {
+  padding: 8px 12px;
+  border-radius: 18px;
+  word-break: break-word;
+}
+
+.payment-button-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-top: 8px;
 }
 </style>

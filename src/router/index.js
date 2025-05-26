@@ -10,6 +10,7 @@ import RenterDashboardView from '@/views/auth/RenterDashboardView.vue'
 import RentalsView from '@/views/auth/RentalsView.vue'
 import MessageView from '@/views/auth/MessageView.vue'
 import ProfileView from '@/views/auth/ProfileView.vue'
+import RenteePaymentView from '@/views/auth/RenteePaymentView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -68,6 +69,11 @@ const router = createRouter({
       path: '/profile',
       name: 'profile',
       component: ProfileView,
+    },
+    {
+      path: '/renteePayment',
+      name: 'renteePayment',
+      component: RenteePaymentView,
     },
   ],
 })

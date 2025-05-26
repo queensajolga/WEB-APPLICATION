@@ -98,6 +98,17 @@ onMounted(() => {
   userFirstName.value = storedName ? storedName : 'Ella'
 })
 
+const loaded = ref(false)
+const loading = ref(false)
+
+function onClick() {
+  loading.value = true
+  setTimeout(() => {
+    loading.value = false
+    loaded.value = true
+  }, 2000)
+}
+
 function navigateTo(path) {
   router.push(path)
 }
