@@ -100,7 +100,7 @@ watchEffect(() => {
                 <v-dialog max-width="500">
                   <template v-slot:activator="{ props: activatorProps }">
                     <v-btn
-                      color="indigo-lighten-2"
+                      color="yellow-lighten-2"
                       class="font-weight-bold mt-10 rounded-lg pa-2"
                       v-bind="activatorProps"
                       text="GCash"
@@ -153,7 +153,7 @@ watchEffect(() => {
 
               <v-col cols="12" sm="6" md="4">
                 <v-btn
-                  color="indigo-lighten-2"
+                  color="yellow-lighten-2"
                   class="font-weight-bold mt-10 rounded-lg pa-2"
                   text="Cash on Delivery / Pick up"
                   variant="flat"
@@ -191,7 +191,7 @@ watchEffect(() => {
                   v-model="Name"
                   label="Name"
                   variant="outlined"
-                  bg-color="indigo-lighten-3 rounded-lg"
+                  bg-color="yellow-lighten-2 rounded-lg"
                 />
               </v-col>
               <v-col cols="12" sm="6" md="4">
@@ -200,7 +200,7 @@ watchEffect(() => {
                   v-model="number"
                   label="Phone number"
                   variant="outlined"
-                  bg-color="indigo-lighten-3 rounded-lg"
+                  bg-color="yellow-lighten-2 rounded-lg"
                 />
               </v-col>
             </v-row>
@@ -213,7 +213,7 @@ watchEffect(() => {
                   v-model="Name"
                   label="Email"
                   variant="outlined"
-                  bg-color="indigo-lighten-3 rounded-lg"
+                  bg-color="yellow-lighten-2 rounded-lg"
                 />
               </v-col>
               <v-col cols="12" sm="6" md="4"> </v-col>
@@ -239,7 +239,7 @@ watchEffect(() => {
                   v-model="Name"
                   label="Street address"
                   variant="outlined"
-                  bg-color="indigo-lighten-3 rounded-lg"
+                  bg-color="yellow-lighten-2 rounded-lg"
                 />
               </v-col>
             </v-row>
@@ -251,7 +251,7 @@ watchEffect(() => {
                   v-model="city"
                   label="City"
                   variant="outlined"
-                  bg-color="indigo-lighten-3 rounded-lg"
+                  bg-color="yellow-lighten-2 rounded-lg"
                 />
               </v-col>
               <v-col cols="12" sm="6" md="5">
@@ -260,7 +260,7 @@ watchEffect(() => {
                   v-model="text"
                   label="Province"
                   variant="outlined"
-                  bg-color="indigo-lighten-3 rounded-lg"
+                  bg-color="yellow-lighten-2 rounded-lg"
                 />
               </v-col>
             </v-row>
@@ -272,19 +272,20 @@ watchEffect(() => {
                   v-model="number"
                   label="Postal code"
                   variant="outlined"
-                  bg-color="indigo-lighten-3 rounded-lg"
+                  bg-color="yellow-lighten-2 rounded-lg"
                 />
               </v-col>
               <v-col cols="12" sm="6" md="5"> </v-col>
             </v-row>
 
             <v-spacer class="mt-10"></v-spacer>
+            <v-spacer class="mt-10"></v-spacer>
 
             <v-row justify="center" class="mb-8">
               <v-col cols="12" sm="6" md="8"> </v-col>
               <v-col cols="12" sm="6" md="3">
                 <v-btn
-                  color="indigo-darken-1"
+                  color="yellow-lighten-2"
                   class="font-weight-bold mt-10 rounded-lg pa-2"
                   text="Confirm"
                   variant="flat"

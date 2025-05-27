@@ -301,9 +301,20 @@ function navigateTo(path) {
             </v-col>
           </v-row>
 
+          <v-spacer class="mt-10"></v-spacer>
+          <v-divider color="white"></v-divider>
+          <v-spacer class="mt-10"></v-spacer>
+
           <v-row>
             <v-col cols="12" class="text-center">
-              <v-btn color="yellow darken-2" @click="addToList">
+              <v-btn
+                class="font-weight-bold"
+                style="font-size: 18px"
+                color="yellow darken-2 rounded-pill"
+                height="50px"
+                width="30%"
+                @click="addToList"
+              >
                 {{ editingIndex !== null ? 'Save Changes' : 'Add to the list' }}
               </v-btn>
             </v-col>
