@@ -97,7 +97,7 @@ watchEffect(() => {
 
             <v-row justify="center">
               <v-col cols="12" sm="6" md="4">
-                <v-dialog max-width="400">
+                <v-dialog max-width="500">
                   <template v-slot:activator="{ props: activatorProps }">
                     <v-btn
                       color="indigo-lighten-2"
@@ -114,14 +114,16 @@ watchEffect(() => {
 
                   <template v-slot:default="{ isActive }">
                     <v-card class="text-center">
-                      <v-card-title class="font-weight-bold"
+                      <v-card-title class="font-weight-bold" style="font-size: 25px"
                         >GCASH PAYMENT
                         <v-card-text>
-                          <p>Please send your payment here: 0970622272<br />or</p>
+                          <p style="font-size: 18px">
+                            Please send your payment here: 0970622272<br />or
+                          </p>
                           <p>SCAN HERE</p>
                           <v-spacer class="mt-10"></v-spacer>
 
-                          <v-img src="/images/qr.jpg" max-width="200" class="mx-auto mt-2" contain>
+                          <v-img src="/images/qr.jpg" max-width="400" class="mx-auto mt-2" contain>
                           </v-img>
                           <v-spacer class="mt-10"></v-spacer>
 
