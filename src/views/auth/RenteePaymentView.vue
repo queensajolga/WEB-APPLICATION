@@ -6,10 +6,14 @@ const theme = ref('light')
 const router = useRouter()
 const route = useRoute()
 
-// This isn't used in the navigation bar code, but kept for context if needed elsewhere.
 const currentPath = ref(route.path)
+const userFirstName = ref('')
 
-const userFirstName = ref('') // Also not directly used in the nav bar, but part of your original script setup.
+// Define reactive variables for your form inputs
+const Name = ref('')
+const number = ref('')
+const city = ref('')
+const text = ref('') // Assuming 'text' is for Province
 
 onMounted(() => {
   const storedName = localStorage.getItem('userFirstName')
@@ -24,6 +28,7 @@ watchEffect(() => {
   currentPath.value = route.path
 })
 </script>
+
 <template>
   <v-app :theme="theme">
     <v-main>
@@ -92,24 +97,62 @@ watchEffect(() => {
 
             <v-row justify="center">
               <v-col cols="12" sm="6" md="4">
-                <v-btn
-                  color="indigo-lighten-2"
-                  class="font-weight-bold mt-10 rounded-lg pa-2"
-                  v-bind="activatorProps"
-                  text="GCash"
-                  variant="flat"
-                  block
-                  height="50px"
-                  style="font-size: 18px"
-                >
-                </v-btn>
+                <v-dialog max-width="400">
+                  <template v-slot:activator="{ props: activatorProps }">
+                    <v-btn
+                      color="indigo-lighten-2"
+                      class="font-weight-bold mt-10 rounded-lg pa-2"
+                      v-bind="activatorProps"
+                      text="GCash"
+                      variant="flat"
+                      block
+                      height="50px"
+                      style="font-size: 18px"
+                    >
+                    </v-btn>
+                  </template>
+
+                  <template v-slot:default="{ isActive }">
+                    <v-card class="text-center">
+                      <v-card-title class="font-weight-bold"
+                        >GCASH PAYMENT
+                        <v-card-text>
+                          <p>Please send your payment here: 0970622272<br />or</p>
+                          <p>SCAN HERE</p>
+                          <v-spacer class="mt-10"></v-spacer>
+
+                          <v-img src="/images/qr.jpg" max-width="200" class="mx-auto mt-2" contain>
+                          </v-img>
+                          <v-spacer class="mt-10"></v-spacer>
+
+                          <p>
+                            Once paid, please upload a screenshot of your<br />
+                            transaction for verification.
+                          </p>
+                        </v-card-text>
+
+                        <v-card-actions>
+                          <v-spacer></v-spacer>
+                          <v-btn
+                            color="yellow-lighten-2"
+                            class="font-weight-bold mt-2 rounded-pill pa-2"
+                            v-bind="activatorProps"
+                            text="CLOSE"
+                            variant="flat"
+                            block
+                            @click="isActive.value = false"
+                          ></v-btn>
+                        </v-card-actions>
+                      </v-card-title>
+                    </v-card>
+                  </template>
+                </v-dialog>
               </v-col>
 
               <v-col cols="12" sm="6" md="4">
                 <v-btn
                   color="indigo-lighten-2"
                   class="font-weight-bold mt-10 rounded-lg pa-2"
-                  v-bind="activatorProps"
                   text="Cash on Delivery / Pick up"
                   variant="flat"
                   block
@@ -241,7 +284,6 @@ watchEffect(() => {
                 <v-btn
                   color="indigo-darken-1"
                   class="font-weight-bold mt-10 rounded-lg pa-2"
-                  v-bind="activatorProps"
                   text="Confirm"
                   variant="flat"
                   block
@@ -280,7 +322,7 @@ watchEffect(() => {
 
 <style scoped>
 /* Styles (unchanged) */
-@import url('https://fonts.googleapis.com/css2?family=Jaldi&family=Kaushan+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jaldi&family=Kaushan+Script&display=swhttps://fonts.googleapis.com/css2?family=Jaldi&family=Kaushan+Script&display=swap');
 
 .nav-container {
   border: 3px solid #ffd700;
